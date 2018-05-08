@@ -1,3 +1,12 @@
 .dockbar-item{
 	display:inline-block;
 }
+
+.Treeview-handler--default:after, .Treeview-handler--standalone{
+	background-image: url(assets/expand-button.png);
+}
+
+
+.Treeview [aria-expanded=true]>.Treeview-handler--default:after, .Treeview [aria-expanded=true]>a>.Treeview-handler--standalone {
+    background-image: url(assets/expand-arrow.png) !important;
+}

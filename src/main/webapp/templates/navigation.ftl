@@ -16,9 +16,11 @@
 				  		<#list nav_item.getChildren() as nav_child>
 				  			<li><a href="${nav_child.getURL()}">${nav_child.getName()}</a>
 				  			<#if nav_child.hasChildren()>
-				  				<#list nav_child.getChildren() as nav_child_child>
-				  					<li><a href="${nav_child_child.getURL()}">${nav_child_child.getName()}</a></li>
-				  				</#list>
+				  				<ul>
+					  				<#list nav_child.getChildren() as nav_child_child>
+					  					<li><a href="${nav_child_child.getURL()}">${nav_child_child.getName()}</a></li>
+					  				</#list>
+					  			</ul>
 				  			</#if>
 				  			</li>
 				  		</#list>
