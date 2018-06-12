@@ -5,6 +5,10 @@
 <#assign portlet_back_url = htmlUtil.escapeHREF(portlet_display.getURLBack()) />
 
 <section class="portlet" id="portlet_${portlet_id}">
+
+	<#assign usrRoles = user.getRoles()>
+	<#list usrRoles as usrRole>
+		<#if usrRole.getName() == "Administrator">	
 	<header class="portlet-topper">
 		<h1 class="portlet-title">
 			<!--<span class="portlet-title-text">${portlet_title}</span>-->
@@ -28,6 +32,8 @@ function togglePortletDockbar() {
     document.getElementById("portlet-topper-toolbar_${portlet_id}").style.display=document.getElementById('portlet-topper-toolbar_${portlet_id}').style.display === 'none' ? '' : 'none';
 }
 </script>
+		</#if>
+	</#list> 
 
 	<div class="portlet-content">
 		${portlet_display.writeContent(writer)}

@@ -6,8 +6,11 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html class="no-js" lang="it">
 <!--<![endif]-->
+  
+
 <#include init />
 <head class="$root_css_class">
+<script src="${javascript_folder}/primefaces.jquery.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +43,6 @@
   <link media="all" rel="stylesheet" href="${css_folder}/build.css?minifierType=css">
   <link media="all" rel="stylesheet" href="${css_folder}/theme.css?minifierType=css">
 
-  <script src="${javascript_folder}/vendor/jquery.min.js"></script>
 
   <title>${the_title} - ${company_name}</title>
 </head>
@@ -168,9 +170,7 @@ ${theme.include(body_top_include)}
 
 
 
-<#if has_navigation || is_signed_in>
-			<#include "${full_templates_path}/navigation.ftl" />
-		</#if>
+<#include "${full_templates_path}/navigation.ftl" />
 
 
 
@@ -189,7 +189,10 @@ ${theme.include(body_top_include)}
   
  
 <div  >
-  <#if is_signed_in>	
+  <#if  is_signed_in>
+	<#assign usrRoles = user.getRoles()>
+	<#list usrRoles as usrRole>
+		<#if usrRole.getName() == "Administrator">	
 			<input type="button" value="Admin" onclick="toggleDockbar()"/>
 			<div id="admin-dockbar" style="display:none">
 				 <@liferay.dockbar />
@@ -199,7 +202,9 @@ function toggleDockbar() {
     document.getElementById("admin-dockbar").style.display=document.getElementById('admin-dockbar').style.display === 'none' ? '' : 'none';
 }
 </script>
-</#if>
+			</#if>
+		</#list> 
+	</#if>
 </div>
   </div>
 

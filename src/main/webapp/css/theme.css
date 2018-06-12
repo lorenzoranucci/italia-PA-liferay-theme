@@ -8,5 +8,42 @@
 
 
 .Treeview [aria-expanded=true]>.Treeview-handler--default:after, .Treeview [aria-expanded=true]>a>.Treeview-handler--standalone {
-    background-image: url(assets/expand-arrow.png) !important;
+    background-image: url(assets/expand-arrow.png);
+}
+
+.ui-selectonemenu {
+	padding-right: 0px;
+	border-radius: 0px;
+}
+
+.ui-selectonemenu-trigger{
+	background-image: url(assets/expand-arrow.png);
+	background-color:white;
+	border: 0px;
+	
+}
+
+
+.ui-datatable-odd{
+	background-color:initial;
+}
+.ui-widget-header {
+	background:initial;
+}
+
+.ui-state-default{
+	background:initial;
+}
+
+.ui-datatable-tablewrapper table thead{
+	border-bottom: .2rem solid currentColor!important;
+}
+
+.ui-paginator.ui-paginator-top{
+	border-bottom: 1px solid #a8a8a8;
+	width: 99.9%;
+}
+
+.ui-state-active{
+	background:initial;
 }
