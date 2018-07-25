@@ -126,7 +126,7 @@ ${theme.include(body_top_include)}
       </div>
 
       <div class="Header-utils Grid-cell">
-        <div class="Header-social Headroom-hideme">
+      <!--  <div class="Header-social Headroom-hideme">
           <p>Seguici su</p>
           <ul class="Header-socialIcons">
             <li><a href="" title="Facebook"><span class="Icon-facebook"></span><span class="u-hiddenVisually">Facebook</span></a></li>
@@ -145,7 +145,7 @@ ${theme.include(body_top_include)}
   </div>
 </form>
 
-        </div>
+        </div> -->
       </div>
 
       <div class="Header-toggle Grid-cell">
