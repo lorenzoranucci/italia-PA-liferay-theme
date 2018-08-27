@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>it.umbriadigitale</groupId>
 	<artifactId>pa-theme</artifactId>
-	<packaging>war</packaging>
+	<packaging>war</packaging> 
 	<name>pa-theme Theme</name>
 	<version>1.0.0-SNAPSHOT</version>
 	<build> 
@@ -88,7 +88,7 @@
 		</dependency>
 	</dependencies>
 	<properties>
-		<liferay.theme.parent>classic</liferay.theme.parent>
+		<liferay.theme.parent>_unstyled</liferay.theme.parent>
 		<liferay.theme.type>ftl</liferay.theme.type>
 	</properties>
 <profiles>

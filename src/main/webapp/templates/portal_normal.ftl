@@ -1,16 +1,16 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js ie89 ie8" lang="it"><![endif]-->
-<!--[if IE 9]><html class="no-js ie89 ie9" lang="it"><![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="it">
-<!--<![endif]-->
-  
 
+  
+  
 <#include init />
-<head class="$root_css_class">
+
+<html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
+<head >
+
+<!--needed for compatibility theme/primefaces-->
 <script src="${javascript_folder}/primefaces.jquery.js"></script>
+
+  
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,22 +33,36 @@
       wf.type = 'text/javascript';
       wf.async = 'true';
       var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
+      s.parentNode.insertBefore(wf, s); 
     })();
   </script>
 
   <!-- include HTML5shim per Explorer 8 -->
   <script src="${javascript_folder}/vendor/modernizr.js"></script>
 
-  <link media="all" rel="stylesheet" href="${css_folder}/build.css?minifierType=css">
-  <link media="all" rel="stylesheet" href="${css_folder}/theme.css?minifierType=css">
+  
 
 
   <title>${the_title} - ${company_name}</title>
+  <link media="all" rel="stylesheet" href="${css_folder}/build.css?minifierType=css" type="text/css">
+  <link media="all" rel="stylesheet" href="${css_folder}/theme.css?minifierType=css" type="text/css">
 </head>
 
-<body class=" $css_class t-Pac">
-${theme.include(body_top_include)}
+<body class="${css_class}  t-Pac">
+
+		
+		<#if  is_signed_in>
+		<#assign usrRoles = user.getRoles()>
+		<#list usrRoles as usrRole>
+			<#if usrRole.getName() == "Administrator">	
+				<@liferay.dockbar />
+			</#if>
+		</#list> 
+	</#if>
+	
+
+	
+
 
   <div id="cookie-bar" class="CookieBar js-CookieBar u-background-95 u-padding-r-all" aria-hidden="true">
   <p class="u-color-white u-text-r-xs u-lineHeight-m u-padding-r-bottom">Questo sito utilizza cookie tecnici, analytics e di terze parti.
@@ -188,25 +202,8 @@ ${theme.include(body_top_include)}
 
   
  
-<div  >
-  <#if  is_signed_in>
-	<#assign usrRoles = user.getRoles()>
-	<#list usrRoles as usrRole>
-		<#if usrRole.getName() == "Administrator">	
-			<input type="button" value="Admin" onclick="toggleDockbar()"/>
-			<div id="admin-dockbar" style="display:none">
-				 <@liferay.dockbar />
-			</div>
-	<script>
-function toggleDockbar() {
-    document.getElementById("admin-dockbar").style.display=document.getElementById('admin-dockbar').style.display === 'none' ? '' : 'none';
-}
-</script>
-			</#if>
-		</#list> 
-	</#if>
+
 </div>
-  </div>
 
   
 
@@ -242,6 +239,8 @@ function toggleDockbar() {
 
 </div>
 
+${theme.include(body_top_include)}
+
 
 
   <!--[if IE 8]>
@@ -262,8 +261,10 @@ function toggleDockbar() {
 
   <script src="${javascript_folder}/IWT.min.js"></script>
 
+<div class="aui">
  ${theme.include(body_bottom_include)}
   ${theme.include(bottom_include)}
+ </div>
 </body>
 </html>
 
