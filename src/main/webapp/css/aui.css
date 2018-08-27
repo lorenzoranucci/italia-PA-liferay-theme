@@ -177,17 +177,17 @@
     top: -0.5em; }
   .aui sub {
     bottom: -0.25em; }
-  .aui img {
-    /* Responsive images (ensure images don't scale beyond their parents) */
-    max-width: 100%;
-    /* Part 1: Set a maxium relative to the parent */
-    width: auto\9;
-    /* IE7-8 need help adjusting responsive images */
-    height: auto;
-    /* Part 2: Scale the height according to the width, otherwise you get stretching */
-    vertical-align: middle;
-    border: 0;
-    -ms-interpolation-mode: bicubic; }
+/*   .aui img { */
+/*     Responsive images (ensure images don't scale beyond their parents) */
+/*     max-width: 100%; */
+/*     Part 1: Set a maxium relative to the parent */
+/*     width: auto\9; */
+/*     IE7-8 need help adjusting responsive images */
+/*     height: auto; */
+/*     Part 2: Scale the height according to the width, otherwise you get stretching */
+/*     vertical-align: middle; */
+/*     border: 0; */
+/*     -ms-interpolation-mode: bicubic; } */
   .aui #map_canvas img,
   .aui .google-maps img {
     max-width: none; }
@@ -260,10 +260,10 @@
       .aui thead {
         display: table-header-group; }
       .aui tr,
-      .aui img {
-        page-break-inside: avoid; }
-      .aui img {
-        max-width: 100% !important; }
+/*       .aui img { */
+/*         page-break-inside: avoid; } */
+/*       .aui img { */
+/*         max-width: 100% !important; } */
       .aui p,
       .aui h2,
       .aui h3 {
@@ -4946,9 +4946,9 @@
     .aui .uneditable-input.span12 {
       width: 710px; } }
   @media (max-width: 767px) {
-    .aui body {
-      padding-left: 20px;
-      padding-right: 20px; }
+/*     .aui body { */
+/*       padding-left: 20px; */
+/*       padding-right: 20px; } */
     .aui .navbar-fixed-top,
     .aui .navbar-fixed-bottom,
     .aui .navbar-static-top {
@@ -5062,8 +5062,8 @@
     .aui .carousel-caption {
       position: static; } }
   @media (max-width: 979px) {
-    .aui body {
-      padding-top: 0; }
+/*     .aui body { */
+/*       padding-top: 0; } */
     .aui .navbar-fixed-top,
     .aui .navbar-fixed-bottom {
       position: static; }
