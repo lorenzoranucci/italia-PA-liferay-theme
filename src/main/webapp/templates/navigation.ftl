@@ -4,11 +4,11 @@
     <div class="Offcanvas-toggleContainer u-background-70 u-jsHidden">
       <a class="Hamburger-toggleContainer u-block u-color-white u-padding-bottom-xxl u-padding-left-s u-padding-top-xxl js-fr-offcanvas-close"
         aria-controls="menu" aria-label="esci dalla navigazione" title="esci dalla navigazione" href="#">
-        <span class="Hamburger-toggle is-active" aria-hidden="true"></span>
+        <span class="Hamburger-toggle  is-active" aria-hidden="true"></span>
       </a>
     </div>
     <nav>
-			<ul class="Linklist Linklist--padded Treeview Treeview--default js-Treeview u-text-r-xs">
+			<ul class="Linklist Linklist--padded Treeview Treeview--default js-Treeview u-text-r-xs"> 
 			<#list nav_items as nav_item>
 			  	<li><a href="${nav_item.getURL()}">${nav_item.getName()}</a>
 				  <#if nav_item.hasChildren()>
@@ -28,19 +28,28 @@
 				  </#if>
 				</li>
 			</#list>
-			
-  
-  
-  
-  
-  <li data-megamenu-class="u-hidden">
-    <a class="Button u-border-none u-color-95 u-background-compl u-text-r-xxs" href="#">Accedi</a>
-  </li>
-</ul>
+			<li data-megamenu-class="Megamenu-area Spid">
+		  		<#if !is_signed_in>
+                    <a data-megamenu-class="Button Spid-button Spid-button-nav u-text-r-xxs" data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">
+                    	<img  alt="" aria-hidden="true"/>
+                    	<span>${sign_in_text}</span>
+                	</a>
+                <#else>
+                	<a data-megamenu-class="Button Spid-button Spid-button-nav u-text-r-xxs" data-redirect="${is_login_redirect_required?string}" href="${sign_out_url}" id="sign-out" rel="nofollow">
+                		<img  alt="" aria-hidden="true"/>
+                		<span>${sign_out_text}</span>
+            		</a>
+                </#if>
+                	
+            </li>
+			  
 
 	
 
 
     </nav>
-  </div>
+    
+    
 </section>
+                
+         

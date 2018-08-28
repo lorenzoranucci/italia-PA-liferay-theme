@@ -52,5 +52,10 @@
 	margin-bottom:0px !important;
 }
 
+.header-navbar-umbria{
+	background-color: white;
+}
 
-
+.header-titleLink-umbria a {
+    color: #9C2328;
+}

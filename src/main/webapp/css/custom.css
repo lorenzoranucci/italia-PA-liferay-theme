@@ -1,0 +1,20 @@
+.Header-navbar-umbria{
+	background-color: white !important; 
+}
+
+.header-titleLink-umbria a , small {
+    color: #9C2328 !important;
+}
+
+.Spid-button-nav{
+	border-color: transparent !important;
+    height: 100%;
+}
+
+.Hamburger-toggle-umbria, .Hamburger-toggle-umbria:after, .Hamburger-toggle-umbria:before{
+	background-color: #9C2328 !important;
+}
+
+.Spid-button img{
+	content:url(assets/spid-ico-circle-bb.svg);
+}

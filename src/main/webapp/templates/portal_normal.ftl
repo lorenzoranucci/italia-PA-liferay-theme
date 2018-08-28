@@ -3,7 +3,6 @@
   
   
 <#include init />
-
 <html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
 <head >
 
@@ -85,58 +84,38 @@
 
   <div class="Header-banner ">
     <div class="Header-owner Headroom-hideme ">
-      <a href=""><span>${company_name}</span></a>
-      <div class="Header-languages ">
-          <a href="#languages" data-menu-trigger="languages" class="Header-language u-border-none u-zindex-max u-inlineBlock">
-            <span class="u-hiddenVisually">lingua attiva:</span>
-            <span class="">ITA</span>
-            <!-- <span class="u-hidden u-md-inlineBlock u-lg-inlineBlock">Italiano</span> -->
-            <span class="Icon Icon-expand u-padding-left-xs"></span>
-          </a>
-          <div id="languages" data-menu class="Dropdown-menu Header-language-other u-jsVisibilityHidden u-nojsDisplayNone">
-            <span class="Icon-drop-down Dropdown-arrow u-color-white"></span>
-            <ul>
-              <li><a href="#1" class="u-padding-r-all"><span lang="en">English</span></a></li>
-              <li><a href="#1" class="u-padding-r-all"><span lang="ar">عربي</span></a></li>
-              <li><a href="#2" class="u-padding-r-all"><span lang="ch">中文网</span></a></li>
-              <li><a href="#3" class="u-padding-r-all"><span lang="de">Deutsch</span></a></li>
-              <li><a href="#8" class="u-padding-r-all"><span lang="es">Español</span></a></li>
-              <li><a href="#4" class="u-padding-r-all"><span lang="fr">Français</span></a></li>
-              <li><a href="#5" class="u-padding-r-all"><span lang="ja">日本語</span></a></li>
-              <li><a href="#6" class="u-padding-r-all"><span lang="pt">Portuguese</span></a></li>
-              <li><a href="#7" class="u-padding-r-all"><span lang="ru">НА РУССКОМ</span></a></li>
-              <li><a href="#10" class="u-padding-r-all"><span lang="uk">УКРАЇНСЬКA</span></a></li>
-              <li><a href="#9" class="u-padding-r-all"><span lang="tr">TÜRKÇE</span></a></li>
-            </ul>
-          </div>
-      </div>
+      <a href="${site_default_public_url}"><span>${company_name}</span></a>
+      
     </div>
   </div>
 
-  <div class="Header-navbar ">
+  <div class="Header-navbar-umbria Header-navbar ">
     <div class="u-layout-wide Grid Grid--alignMiddle u-layoutCenter">
       <div class="Header-logo Grid-cell" aria-hidden="true">
         <a href="" tabindex="-1">
-          <img src="//placehold.it/75x80" alt="">
+          <img src="${site_logo}" alt="">
         </a>
       </div>
 
       <div class="Header-title Grid-cell">
-        <h1 class="Header-titleLink">
-          <a href="/">
-            ${the_title}<br>
+        <h1 class="header-titleLink-umbria Header-titleLink">
+          <a href="${site_default_url}">
+            ${the_title}
+          </a>
+          <br>
+          <a href="${site_default_public_url}">
             <small>${company_name}</small>
           </a>
         </h1>
       </div>
 
       <div class="Header-searchTrigger Grid-cell">
-        <button aria-controls="header-search" class="js-Header-search-trigger Icon Icon-search "
+        <!--<button aria-controls="header-search" class="js-Header-search-trigger Icon Icon-search "
           title="attiva il form di ricerca" aria-label="attiva il form di ricerca" aria-hidden="false">
         </button>
         <button aria-controls="header-search" class="js-Header-search-trigger Icon Icon-close u-hidden "
-          title="disattiva il form di ricerca" aria-label="disattiva il form di ricerca" aria-hidden="true">
-        </button>
+          title="disattiva il form di ricerca" aria-label="disattiva il form di ricerca" aria-hidden="true"> 
+        </button>-->
       </div>
 
       <div class="Header-utils Grid-cell">
@@ -150,14 +129,14 @@
         </div>
         <div class="Header-search" id="header-search">
           <form class="Form">
-  <div class="Form-field Form-field--withPlaceholder Grid u-background-white u-color-grey-30 u-borderRadius-s" role="search">
-    <input class="Form-input Form-input--ultraLean Grid-cell u-sizeFill u-text-r-s u-color-black u-text-r-xs u-borderRadius-s"
-      required id="cerca">
-    <label class="Form-label u-color-grey-50 u-text-r-xxs" for="cerca">cerca nel sito</label>
-    <button class="Grid-cell u-sizeFit Icon-search Icon--rotated u-color-grey-50 u-padding-all-s u-textWeight-700" title="Avvia la ricerca" aria-label="Avvia la ricerca">
-  </button>
-  </div>
-</form>
+		  <div class="Form-field Form-field--withPlaceholder Grid u-background-white u-color-grey-30 u-borderRadius-s" role="search">
+		    <input class="Form-input Form-input--ultraLean Grid-cell u-sizeFill u-text-r-s u-color-black u-text-r-xs u-borderRadius-s"
+		      required id="cerca">
+		    <label class="Form-label u-color-grey-50 u-text-r-xxs" for="cerca">cerca nel sito</label>
+		    <button class="Grid-cell u-sizeFit Icon-search Icon--rotated u-color-grey-50 u-padding-all-s u-textWeight-700" title="Avvia la ricerca" aria-label="Avvia la ricerca">
+		  </button>
+		  </div>
+		</form>
 
         </div> -->
       </div>
@@ -165,7 +144,7 @@
       <div class="Header-toggle Grid-cell">
         <a class="Hamburger-toggleContainer js-fr-offcanvas-open u-nojsDisplayInlineBlock u-lg-hidden u-md-hidden" href="#menu"
           aria-controls="menu" aria-label="accedi al menu" title="accedi al menu">
-          <span class="Hamburger-toggle" role="presentation"></span>
+          <span class="Hamburger-toggle Hamburger-toggle-umbria" role="presentation"></span>
           <span class="Header-toggleText" role="presentation">Menu</span>
         </a>
       </div>
@@ -211,12 +190,11 @@
 
 
 
-<!--FOOTER-->
 	<div class="u-background-95 u-hiddenPrint">
 		<div class="u-layout-wide u-layoutCenter u-layout-r-withGutter">
 	        <footer class="Footer u-background-95">
 			  <div class="u-cf">
-			    <img class="Footer-logo" src="//placehold.it/75x80?text=placeholder" alt="">
+			    <img class="Footer-logo" src="${site_logo}" alt="">
 			    <p class="Footer-siteName">
 			      ${company_name}
 			    </p>
